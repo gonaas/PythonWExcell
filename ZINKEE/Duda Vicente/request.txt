@@ -1,0 +1,247 @@
+[
+    {
+        "id": 96,
+        "mensajesPendientes": 0,
+        "mencionado": false,
+        "tieneMensajes": false,
+        "tieneAdjuntos": false,
+        "data": [
+            {
+                "campoId": 1795,
+                "valor": "REG 5",
+                "valorRel": null
+            },
+            {
+                "campoId": 1796,
+                "valor": {
+                    "formula": "30,1999",
+                    "number": 30.1999,
+                    "numberFixed": 30.2
+                },
+                "valorRel": null
+            },
+            {
+                "campoId": 1797,
+                "valor": {
+                    "formula": "60.399800",
+                    "number": 60.3998,
+                    "numberFixed": 60.4
+                },
+                "valorRel": null
+            },
+            {
+                "campoId": 1798,
+                "valor": "2022-02-20",
+                "valorRel": null
+            },
+            {
+                "campoId": 1793,
+                "valor": "2022-02-18",
+                "valorRel": null
+            },
+            {
+                "campoId": 1794,
+                "valor": 498,
+                "valorRel": "Curro"
+            }
+        ],
+        "bloqueado": false,
+        "camposIdsBloqueados": []
+    },
+    {
+        "id": 95,
+        "mensajesPendientes": 0,
+        "mencionado": false,
+        "tieneMensajes": false,
+        "tieneAdjuntos": false,
+        "data": [
+            {
+                "campoId": 1795,
+                "valor": "REG 4",
+                "valorRel": null
+            },
+            {
+                "campoId": 1796,
+                "valor": {
+                    "formula": "25",
+                    "number": 25.0,
+                    "numberFixed": 25.0
+                },
+                "valorRel": null
+            },
+            {
+                "campoId": 1797,
+                "valor": {
+                    "formula": "50.000000",
+                    "number": 50.0,
+                    "numberFixed": 50.0
+                },
+                "valorRel": null
+            },
+            {
+                "campoId": 1798,
+                "valor": "2022-02-19",
+                "valorRel": null
+            },
+            {
+                "campoId": 1793,
+                "valor": "2022-02-18",
+                "valorRel": null
+            },
+            {
+                "campoId": 1794,
+                "valor": 498,
+                "valorRel": "Curro"
+            }
+        ],
+        "bloqueado": false,
+        "camposIdsBloqueados": []
+    },
+    {
+        "id": 94,
+        "mensajesPendientes": 0,
+        "mencionado": false,
+        "tieneMensajes": false,
+        "tieneAdjuntos": false,
+        "data": [
+            {
+                "campoId": 1795,
+                "valor": "REG 3",
+                "valorRel": null
+            },
+            {
+                "campoId": 1796,
+                "valor": {
+                    "formula": "20,55",
+                    "number": 20.55,
+                    "numberFixed": 20.55
+                },
+                "valorRel": null
+            },
+            {
+                "campoId": 1797,
+                "valor": {
+                    "formula": "41.100000",
+                    "number": 41.1,
+                    "numberFixed": 41.1
+                },
+                "valorRel": null
+            },
+            {
+                "campoId": 1798,
+                "valor": "2022-02-19",
+                "valorRel": null
+            },
+            {
+                "campoId": 1793,
+                "valor": "2022-02-18",
+                "valorRel": null
+            },
+            {
+                "campoId": 1794,
+                "valor": 498,
+                "valorRel": "Curro"
+            }
+        ],
+        "bloqueado": false,
+        "camposIdsBloqueados": []
+    },
+    {
+        "id": 93,
+        "mensajesPendientes": 0,
+        "mencionado": false,
+        "tieneMensajes": false,
+        "tieneAdjuntos": false,
+        "data": [
+            {
+                "campoId": 1795,
+                "valor": "REG 2",
+                "valorRel": null
+            },
+            {
+                "campoId": 1796,
+                "valor": {
+                    "formula": "15",
+                    "number": 15.0,
+                    "numberFixed": 15.0
+                },
+                "valorRel": null
+            },
+            {
+                "campoId": 1797,
+                "valor": {
+                    "formula": "30.000000",
+                    "number": 30.0,
+                    "numberFixed": 30.0
+                },
+                "valorRel": null
+            },
+            {
+                "campoId": 1798,
+                "valor": "2022-02-18",
+                "valorRel": null
+            },
+            {
+                "campoId": 1793,
+                "valor": "2022-02-18",
+                "valorRel": null
+            },
+            {
+                "campoId": 1794,
+                "valor": 498,
+                "valorRel": "Curro"
+            }
+        ],
+        "bloqueado": false,
+        "camposIdsBloqueados": []
+    },
+    {
+        "id": 92,
+        "mensajesPendientes": 0,
+        "mencionado": false,
+        "tieneMensajes": false,
+        "tieneAdjuntos": false,
+        "data": [
+            {
+                "campoId": 1795,
+                "valor": "REG 1",
+                "valorRel": null
+            },
+            {
+                "campoId": 1796,
+                "valor": {
+                    "formula": "10",
+                    "number": 10.0,
+                    "numberFixed": 10.0
+                },
+                "valorRel": null
+            },
+            {
+                "campoId": 1797,
+                "valor": {
+                    "formula": "20.000000",
+                    "number": 20.0,
+                    "numberFixed": 20.0
+                },
+                "valorRel": null
+            },
+            {
+                "campoId": 1798,
+                "valor": "2022-02-18",
+                "valorRel": null
+            },
+            {
+                "campoId": 1793,
+                "valor": "2022-02-18",
+                "valorRel": null
+            },
+            {
+                "campoId": 1794,
+                "valor": 498,
+                "valorRel": "Curro"
+            }
+        ],
+        "bloqueado": false,
+        "camposIdsBloqueados": []
+    }
+]

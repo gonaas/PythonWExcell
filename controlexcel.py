@@ -1,48 +1,66 @@
 import requests
-import json
-import openpyxl as xl
+from openpyxl import Workbook, load_workbook
+from openpyxl.utils import get_column_letter
+from openpyxl.styles import Font
 
 stage = "https://backend.stage.zinkee.com:8443/MasaBackend-stage"
-api = "/api/mant/registro/list"
+apiRegistros = "/api/mant/registro/list"
+apiCampos = "/api/mant/skeleton/get"
 app = "65"
 apiKey = "3B35DEBE-79B8-4CFE-AD8A-E95F2CEA2783"
 math = "77"
 
+wb = Workbook()
+sheet = wb.active
+sheet.title = "Plantillas CS math77"
+registros = []
+Campos = []
+
+VectorTipos = []
+VectorId = []
+VectorNombre= []
+
+x = [[]]
+
 if __name__ == '__main__':
-    url = stage + api
+    url = stage + apiRegistros
+    urlCampos = stage + apiCampos
     payload = {'mantId': math, 'mantVistaId':'null','pagNum':'null', 'invertirWhereVista':'false'}
+    payloadCampos = {'mantId': math}
     headers = {'App' : app, 'Content-Type' : 'application/json', 'Authorization': apiKey}
     response = requests.post(url, headers=headers, json=payload)
+    responseCampos = requests.post(urlCampos, headers=headers, json=payloadCampos)
 
-    fila = 2
-    reg = 0
-    
     response_json = response.json()
-    data = response_json[reg]["data"][1]
-        print(data + "\n")
+    response_json_campos = responseCampos.json()
+
+    for cam in response_json_campos["campos"]:
+        VectorId.append(cam["id"])
+        VectorTipos.append(cam["tipo"])
+        VectorNombre.append(cam["nombre"])
+
+        
+    for reg in response_json:
+        registros.append(reg["id"])
+        for n in range (0, len(reg["data"])):
+            if((VectorTipos[n] == "T") or (VectorTipos[n] == "F") or (VectorTipos[n] == "H")):
+                Campos.append(reg["data"][n]["valor"])
+            elif((VectorTipos[n] == "N")):
+                Campos.append(reg["data"][n]["valor"]["number"])
+            elif((VectorTipos[n] == "U")):
+                Campos.append(reg["data"][n]["valorRel"])
+    '''''
+    indexvector = 0
+    for row in range(0, len(registros)):
+        for col in range(0, len(VectorTipos)):
+            x[row][col] = Campos[indexvector]
+            indexvector +=1
+    '''''
+
+        
+    print(VectorNombre)
+    print(VectorTipos)
+    print(VectorId)
+    print(Campos)     
+    print(len(Campos))   
     
-    '''
-    for registro in response_json:
-        columna = 1
-        
-        c_texto = response_json[reg]["data"][0]["valor"]
-        c_num = response_json[reg]["data"][1]["valor"]["number"]
-        c_numf = response_json[reg]["data"][2]["valor"]["number"]
-        c_fecha = response_json[reg]["data"][3]["valor"]
-        f_creacion = response_json[reg]["data"][4]["valor"]
-        u_creador = response_json[reg]["data"][5]["valorRel"]
-        
-        #Datos a excel
-        archivo = xl.load_workbook('excel.xlsx')
-        hoja = archivo['Hoja1'] 
-        
-        ex_c_texto = hoja.cell(fila, columna)
-        ex_c_texto.value = c_texto
-        archivo.save('excel2.xlsx')
-        
-        #Suma fila y columna || 
-        fila += 1
-        reg += 1
-        
-    print('Correcto')
-    '''
