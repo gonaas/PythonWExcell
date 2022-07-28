@@ -1,7 +1,7 @@
 import requests
-import numpy as np
 from constants import API_REQUEST_REGISTRO_LIST, API_REQUEST_MANT_SKELETON, TypeFields, NameFields, records, Campos
 from api.googlesheet import sheet
+from api.zinkee import gatData
 from seetings import stage, app, apiKey, math, sheetName, SAMPLE_SPREADSHEET_ID
 
 if __name__ == '__main__':
@@ -24,42 +24,18 @@ if __name__ == '__main__':
         TypeFields.append(cam["tipo"])
         NameFields.append(cam["nombre"])
 
-    for reg in response_json:
-        records.append(reg["id"])
-        for n in range (0, len(reg["data"])):
-            if((TypeFields[n] == "T") or (TypeFields[n] == "F") or (TypeFields[n] == "H")or (TypeFields[n] == "B") or (TypeFields[n] == "V")):
-                Campos.append(reg["data"][n]["valor"])
-            elif((TypeFields[n] == "N")):
-                Campos.append(reg["data"][n]["valor"]["number"])
-            elif((TypeFields[n] == "D")):
-                try:
-                    if((reg["data"][n]["valorRel"])==  None):
-                            try:
-                                Campos.append(reg["data"][n]["valor"]["number"])
-                            except:
-                                Campos.append(reg["data"][n]["valor"])
-                    else:
-                        Campos.append(reg["data"][n]["valorRel"])
-                        
-                except:
-                        Campos.append(reg["data"][n]["valor"]["numberFixed"])
-            elif((TypeFields[n] == "U") or (TypeFields[n] == "LV") or (TypeFields[n] == "UG") or (TypeFields[n] == "RM")):
-                Campos.append(reg["data"][n]["valorRel"])
-            else:
-                Campos.append("-")
-
-            
-    VCampos = np.array(Campos)
-    MCampos = np.reshape(VCampos, (len(records), len(TypeFields)))
+    nameCampos = [NameFields]
     
+    content = gatData(response_json, records, TypeFields, Campos)
 
     request=sheet.values().clear(spreadsheetId=SAMPLE_SPREADSHEET_ID,range=sheetName+"!A:Z").execute()
-    nameCampos = [NameFields]
+    
     request=sheet.values().update(spreadsheetId=SAMPLE_SPREADSHEET_ID,
                                  range=sheetName+"!A1",valueInputOption="USER_ENTERED",body={"values":nameCampos}).execute()
-    content = MCampos.tolist()
+    
     request=sheet.values().update(spreadsheetId=SAMPLE_SPREADSHEET_ID,
                                  range=sheetName+"!A2",valueInputOption="USER_ENTERED",body={"values":content}).execute()
+    
     result = sheet.values().get(spreadsheetId=SAMPLE_SPREADSHEET_ID,
                                 range=sheetName+"!A:Z").execute()
 

@@ -1,11 +1,11 @@
 #ZINKEE
 stage = "https://www.backend.stage.zinkee.com:8443/MasaBackend-stage"
 
-app = "121"
+app = input("app->")
 
-apiKey = "97A2B1D5-D266-41C4-B5A8-20BEB45A2D2F"
+apiKey = input("api-key->")
 
-math = "39"
+math = input("mant->")
 
 #GOOGLE SHEET
 sheetName = "test2"
