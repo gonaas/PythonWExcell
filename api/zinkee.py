@@ -1,6 +1,6 @@
 import numpy as np
 
-def gatData(response_json, records, TypeFields, Campos):
+def getData(response_json, records, TypeFields, Campos):
     for reg in response_json:
         records.append(reg["id"])
         for n in range (0, len(reg["data"])):
