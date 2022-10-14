@@ -1,14 +1,14 @@
 #ZINKEE
 stage = input("url->")
 
-app = "247"
+app = input("app->")
 
-apiKey = "697C6541-DE3E-49B0-BB28-5C3AA9B02C32"
+apiKey = input("key->")
 
-math = "3"
+math = input("mant->")
 
 #GOOGLE SHEET
 sheetName = "mant 3"
 
 #URL d/*/edit
-SAMPLE_SPREADSHEET_ID = '1BoNIYVCW6saEZr-wJnv9hgyX6q6oTjJnNu0Mb48tfMo'
+SAMPLE_SPREADSHEET_ID = input("id_sheet->")
