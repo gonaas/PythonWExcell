@@ -1,7 +1,5 @@
 #ZINKEE
-#stage = "https://www.backend.stage.zinkee.com:8443/MasaBackend-stage"
-
-stage = "https://www.backend.stage.zinkee.com:8443/MasaBackend-stage"
+stage = input("url->")
 
 app = "247"
 
