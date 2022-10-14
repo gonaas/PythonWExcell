@@ -11,7 +11,6 @@ if __name__ == '__main__':
     
     payload = {'mantId': math, 'mantVistaId':'null','pagNum':'null', 'invertirWhereVista':'false'}
     payloadCampos = {'mantId': math}
-    
     headers = {'App' : app, 'Content-Type' : 'application/json', 'Authorization': apiKey}
     
     response = requests.post(url, headers=headers, json=payload)

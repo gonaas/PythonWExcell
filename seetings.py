@@ -1,14 +1,16 @@
 #ZINKEE
+#stage = "https://www.backend.stage.zinkee.com:8443/MasaBackend-stage"
+
 stage = "https://www.backend.stage.zinkee.com:8443/MasaBackend-stage"
 
-app = input("app->")
+app = "247"
 
-apiKey = input("api-key->")
+apiKey = "697C6541-DE3E-49B0-BB28-5C3AA9B02C32"
 
-math = input("mant->")
+math = "3"
 
 #GOOGLE SHEET
-sheetName = "test2"
+sheetName = "mant 3"
 
 #URL d/*/edit
-SAMPLE_SPREADSHEET_ID = '1lRIDShBQU1oe7WOi6Q3FeuOCBvrAp02-A3_LhgwZ6Zs'
+SAMPLE_SPREADSHEET_ID = '1BoNIYVCW6saEZr-wJnv9hgyX6q6oTjJnNu0Mb48tfMo'
