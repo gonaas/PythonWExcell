@@ -1,4 +1,4 @@
-SERVICE_ACCOUNT_FILE = '/Users/gonaas/ssh/integraciones.json'
+SERVICE_ACCOUNT_FILE = 'path'
 
 #CONSTANT
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
